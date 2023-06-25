@@ -4,14 +4,17 @@ import {
   InputDiv,
   ProfileImg,
   DivLogo,
+  ProfileDiv,
+  LoginButton
 } from "./Header.styles";
 import SpotifyImg from "@/public/icons/spotify-color-svgrepo-com.svg";
 import { useContext } from "react";
 import { FindContext } from "@/context/Context";
-import SearchIcon from "@/public/icons/search.png"
+import SearchIcon from "@/public/icons/search.png";
 
 export const Header: React.FC = () => {
-  const { setTerm, onLogButtonClick, onSearch, user } = useContext(FindContext);
+  const { setTerm, onLogButtonClick, onSearch, user,setUser } = useContext(FindContext);
+
   return (
     <Container>
       <DivLogo>
@@ -25,16 +28,20 @@ export const Header: React.FC = () => {
           <img src={SearchIcon} alt="" />
         </button>
       </InputDiv>
-      <button
-        style={user?.images[0].url ? { display: "none" } : { display: "block" }}
+      <LoginButton
+        style={!user?.images[0].url? { display: "block" } : { display: "none" }}
         onClick={onLogButtonClick}
       >
         Login
-      </button>
-      <ProfileImg
-        style={user?.images[0].url ? { display: "block" } : { display: "none" }}
-        src={user?.images[0]?.url}
-      />
+      </LoginButton>
+      <div
+        onClick={()=>setUser(null)}
+        style={user?.images[0].url?{ display: "block" } : { display: "none" }}
+      >
+        <ProfileDiv>
+          <ProfileImg src={user?.images[0]?.url} />
+        </ProfileDiv>
+      </div>
     </Container>
   );
 };

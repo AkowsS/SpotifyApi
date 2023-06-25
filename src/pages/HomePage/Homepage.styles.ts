@@ -11,7 +11,7 @@ export const Container = styled("div")(({theme})=>({
 
 export const DivMain = styled("div")(({theme})=>({
   display: "flex",
-  marginTop: "40px",
+  marginTop: "5px",
   justifyContent: "space-around",
   
   [theme.breakpoints.down(720)]: {
@@ -138,5 +138,33 @@ export const DivList = styled("div")({
   div:{
     display:"flex",
     justifyContent:"space-between",
+  }
+});
+
+export const ChangeThemeButton = styled("div")({
+  display:"flex",
+  justifyContent:"end",
+  alignItems:"center",
+  button:{
+    display:"flex",
+    justifyContent:"center",
+    alignItems:"center",
+
+    borderRadius:"20px",
+    border:"none",
+
+    marginRight:"20px",
+    marginTop:"10px",
+    padding:0,
+
+    cursor: "pointer",
+    
+
+    width:"35px",
+    height:"35px"
+  },
+  img:{
+    width:"25px",
+    height:"25px"
   }
 });

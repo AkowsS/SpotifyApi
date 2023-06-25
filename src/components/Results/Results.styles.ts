@@ -18,7 +18,7 @@ export const Container = styled("div")({
   li:{
     borderRadius:"10px",
     ":hover":{
-      backgroundColor: "#63A355",
+      backgroundColor: "#63A355!important",
     },
   }
 });
@@ -38,8 +38,8 @@ export const DivCard = styled("div")({
     border:"none",
     marginRight:"5px",
     ":hover":{
-      cursor:"pointer",
-      backgroundColor:"#00453D"
+      cursor:"pointer!important",
+      backgroundColor:"#00453D!important"
     },
   },
 });

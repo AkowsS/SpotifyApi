@@ -54,7 +54,6 @@ export const FindProvider: React.FC<ValueChildrenProps> = ({ children }) => {
   const addList = (value: Track) => {
     const alreadyExistVerify = list.some((track) => track.id === value.id);
     if (!alreadyExistVerify) setList([...list, value]);
-    console.log(list);
   };
 
   const removeList = (value: Track) => {

@@ -1,4 +1,5 @@
 import { styled } from "@mui/system";
+import LogOutIcon from "@/public/icons/logout.png"
 
 export const Container = styled("div")(({theme})=>({
   height: "80px",
@@ -27,11 +28,35 @@ export const Logo = styled("img")({
   height: "50px",
   width: "50px",
 });
+export const LoginButton = styled("button")({
+  backgroundColor:"white!important",
+})
 
 export const ProfileImg = styled("img")({
+  position:"relative",
   height:"60px",
   width:"60px",
   borderRadius:"30px",
+});
+
+export const ProfileDiv = styled("button")({
+  background:`url(${LogOutIcon}) no-repeat center`,
+  backgroundSize:"40px",
+  backgroundColor:"purple",
+  borderRadius:"30px",
+  display:"flex",
+  justifyContent:"center",
+  alignItems:"center",
+  padding:0,
+  width:"60px", 
+  height:"60px !important",
+  border:"none",
+
+  ":hover":{
+    img:{
+      display:"none"
+    }
+  }
 });
 
 export const InputDiv = styled("div")(({theme})=>({
@@ -49,6 +74,7 @@ export const InputDiv = styled("div")(({theme})=>({
     borderRadius: "10px 0px 0px 10px",
   },
   button: {
+    backgroundColor:"white!important",
     borderRadius: "0px 10px 10px 0px !important",
   },
   [theme.breakpoints.down(720)]: {
