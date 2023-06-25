@@ -1,6 +1,6 @@
 import { styled } from "@mui/system";
 
-export const Container = styled("div")({
+export const Container = styled("div")(({theme})=>({
   marginBottom:"5px",
   div:{
     minHeight:"80px",
@@ -20,8 +20,13 @@ export const Container = styled("div")({
     ":hover":{
       backgroundColor: "#63A355!important",
     },
-  }
-});
+  },
+  [theme.breakpoints.down(300)]: {
+    h1:{
+      fontSize:"16px",
+    }
+  },
+}));
 
 export const DivCard = styled("div")({
   paddingLeft:"10px!important",
